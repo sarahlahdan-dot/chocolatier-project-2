@@ -10,6 +10,7 @@ const session = require('express-session');
 const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 const methodOverride = require('method-override')
+const chocolateRoutes = require('./controllers/chocolate.routes.js')
 
 app.use(express.static('public')) // my app will serve all static files from public folder
 app.use(express.urlencoded({ extended: false }));
@@ -66,9 +67,12 @@ connectToDB() // connect to database
 app.use('/auth',authController)
 app.use('/',indexController)
 
+app.use('/chocolates',chocolateRoutes)
+
 
 // PROTECTED ROUTES:
 app.use(isSignedIn)
+
 // Everything under the user NEEDS to be logged in to se
 
 

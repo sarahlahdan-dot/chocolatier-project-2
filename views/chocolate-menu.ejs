@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chocolates here</h1>
+    <% chocolates.forEach((banana)=>{ %>
+        <p>chocolate Type: <%= banana.chocolateType %></p>
+        <p>chocolate filling: <%= banana.chocolateFilling %> </p>
+        <p>box size: <%= banana.boxSize %> </p>
+        <p>occasion: <%= banana.occasion %> </p>
+           <form action="/chocolates/delete/<%= banana._id %>" method="post">
+        <button>Delete Chocolate</button>
+    </form>
+    <a href="/chocolates/<%= banana._id %>/edit">edit chocolate</a>
+
+    <%})%>
+</body>
+</html>
