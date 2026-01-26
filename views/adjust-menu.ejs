@@ -7,16 +7,22 @@
 </head>
 <body>
     <h1>Chocolates here</h1>
-    <% chocolates.forEach((banana)=>{ %>
+        <% chocolates.forEach((banana)=>{ %>
+        <h3> <%= banana.chocolateName %></h3>  
         <p>chocolate Type: <%= banana.chocolateType %></p>
         <p>chocolate filling: <%= banana.chocolateFilling %> </p>
         <p>box size: <%= banana.boxSize %> </p>
         <p>occasion: <%= banana.occasion %> </p>
-           <form action="/chocolates/delete/<%= banana._id %>" method="post">
-        <button>Delete Chocolate</button>
-    </form>
-    <a href="/chocolates/<%= banana._id %>/edit">edit chocolate</a>
+        <br><br>
+                <a href="/chocolates/update/<%= banana._id %>">edit chocolate</a>
+                <br><br><br>
+                <form action="/chocolates/delete/<%= banana._id %>" method="post">
+                    <button type="submit">delete</button>
+                    <br><br>
+                </form>
+            
 
-    <%})%>
+        <%})%>
+
 </body>
 </html>

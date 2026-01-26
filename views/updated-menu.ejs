@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>update your chocolate!</h1>
+    <form action=" /chocolates/update/<%=oneChocolate._id%>" method="POST" >
+        <label for="">Chocolate Name</label>
+        <input name="chocolateName" type="text" value="<%= oneChocolate.chocolateName %>">
+        <label for="">Chocolate Type</label>
+        <input name="chocolateType" type="text" value="<%=oneChocolate.chocolateType%>">
+        <label for="">Chocolate Filling </label>
+        <input name="chocolateFilling" type="text"value="<%=oneChocolate.chocolateFilling%>">
+        <label for="">Box size</label>
+        <input name="boxSize" type="text"value="<%=oneChocolate.boxSize%>">
+        <label for="">occasion</label> 
+        <input name="occasion" type="text"value="<%=oneChocolate.occasion%>">
+        <button> update chocolate </button>
+
+    </form>
+
+</body>
+</html>

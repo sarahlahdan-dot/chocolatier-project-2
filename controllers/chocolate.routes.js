@@ -6,7 +6,7 @@ const router = require('express').Router();
 
 router.get('/', async (req,res) =>{
     const chocolates = await Chocolate.find();
-    res.render('chocolate-menu.ejs', { chocolates})
+    res.render('main-menu.ejs', {chocolates:chocolates})
 })
 
 // creating new chocolate
@@ -27,11 +27,29 @@ router.post('/delete/:id', async(req,res)=>{
     
 })
 
-// update chocolate
-router.get('/:id/edit', async(req,res)=>{
+// update chocolate page
+router.get('/adjust', async(req,res)=>{
     console.log(req.params.id)
-    const foundChocolate = await Chocolate.findById(req.params.id)
-    res.render('update-chocolate.ejs',{chocolate:foundChocolate})
+    const foundChocolate = await Chocolate.find()
+    res.render('adjust-menu.ejs',{chocolates:foundChocolate})
 })
+
+//edit chocolate
+
+router.get('/update/:id' , async(req,res)=>{
+    const oneChocolate = await Chocolate.findById(req.params.id)
+    res.render("updated-menu.ejs",{oneChocolate})
+})
+
+router.post('/update/:id' , async(req,res)=>{
+    const updatedChocolate = await Chocolate.findByIdAndUpdate(req.params.id , req.body)
+    res.redirect('/chocolates/adjust')
+})
+
+router.post('/delete/:id' , async(req,res)=>{
+    const deletedChocolate = await Chocolate.findByIdAndDelete(req.params.id)
+    res.redirect('/chocolates/adjust')
+})
+
 
 module.exports = router

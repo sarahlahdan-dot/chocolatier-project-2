@@ -1,7 +1,9 @@
 const router = require("express").Router()
 
+const Chocolate = require('../models/chocolate')
 
-router.get('/',(req,res)=>{
-    res.render('homepage.ejs')
+router.get('/',async (req,res)=>{
+    const chocolates = await Chocolate.find();
+    res.render('homepage.ejs',{chocolates})
 })
 module.exports = router;

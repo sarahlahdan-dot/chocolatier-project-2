@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 
 
 const chocolateSchema = new mongoose.Schema({
+    chocolateName: {
+        type: String,
+    },
+
     chocolateType: {
         type: String,
        
