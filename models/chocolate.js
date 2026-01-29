@@ -10,13 +10,16 @@ const chocolateSchema = new mongoose.Schema({
     chocolateType: {
         type: String,
        
+
+       
     },
     chocolateFilling: {
         type: String,
     },
+
     boxSize: {
         type:    String,
-        required:  true,
+        required:  false,
 
     },
 
@@ -24,6 +27,15 @@ const chocolateSchema = new mongoose.Schema({
         type:   String,
         required:   false,
 
+    },
+    description:{
+        type:String,
+        default:''
+    },
+
+    imageUrl:{
+        type:String,
+        default:''
     },
 
     

@@ -7,13 +7,12 @@
 </head>
 <body>
     <%- include('navbar') %>
+    <br><br><br>
     <h1>Chocolatier menu</h1>
        <% chocolates.forEach((banana)=>{ %>
+        <img src="<%= banana.imageUrl %>" style="width: 200px; height: auto;">
         <h3><%= banana.chocolateName %>:</h3>
-        <p>chocolate Type: <%= banana.chocolateType %></p>
-        <p>chocolate filling: <%= banana.chocolateFilling %> </p>
-        <p>box size: <%= banana.boxSize %> </p>
-        <p>occasion: <%= banana.occasion %> </p>
+        <p><%= banana.description %> </p>
         <br><br>
         <%})%>
 </body>

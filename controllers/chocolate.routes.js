@@ -1,6 +1,7 @@
 
-const Chocolate = require('../models/chocolate')
+
 const router = require('express').Router();
+const Chocolate = require('../models/chocolate')
 
 // get all chocolate
 
