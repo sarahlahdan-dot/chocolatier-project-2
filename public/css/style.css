@@ -80,9 +80,9 @@ a:hover {
 }
 
 form {
-    padding: 25px;
+    padding: 5px;
     border-radius: 15px;
-    background: #fff5f7;
+   
     box-shadow: 0 6px 12px rgba(139, 30, 63, 0.25);
 }
 
@@ -93,7 +93,37 @@ label {
     font-weight: bold;
 }
 
+/* create page */
+
 input {
     border-radius: 8px;
-    
+    width: 10%;
+    border: 1px solid #d99aaa;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+button {
+    color: wheat;
+    width: 50%;
+    border: none;
+    background: linear-gradient(to right, #8b13ef, #5a1f1f);
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 5%;
+    padding: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: linear-gradient(to right, #a83250, #6b2a2a);
+}
+
+form button[type=submit] {
+    background: linear-gradient(to right, #8b1e3f, #5a1f1f );
+
+}
+
+br {
+    line-height: 1.8;
 }
