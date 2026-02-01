@@ -19,7 +19,7 @@ router.get('/new', (req,res) =>{
 router.post('/', async (req, res) => {
   console.log('REQ BODY:', req.body)
   await Chocolate.create(req.body)
-  res.redirect('/adjust-menu.ejs')
+  res.redirect('/chocolates/adjust')
 })
  
 
