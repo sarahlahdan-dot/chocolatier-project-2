@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>Chocolates here</h1>
+    <h1>update Your Own Chocolate Here!</h1>
         <% chocolates.forEach((banana)=>{ %>
         <h3> <%= banana.chocolateName %></h3>  
         <p>chocolate Type: <%= banana.chocolateType %></p>
@@ -15,11 +15,11 @@
         <p>box size: <%= banana.boxSize %> </p>
         <p>occasion: <%= banana.occasion %> </p>
         <br><br>
-                <a href="/chocolates/update/<%= banana._id %>">edit chocolate</a>
-                <br><br><br>
+                <a href="/chocolates/update/<%= banana._id %>">update chocolate</a>
+                
                 <form action="/chocolates/delete/<%= banana._id %>" method="post">
-                    <button type="submit">delete</button>
-                    <br><br>
+                    <button type="submit">Delete chocolate</button>
+                    <br>
                 </form>
             
 

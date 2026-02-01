@@ -6,72 +6,82 @@
 
 
 body {
-   background-image: url('/images/valentine.jpg');
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   min-height: 100vh;
-
+   padding: 20px; 
+   background-color: #fff5f5; 
+   line-height: 1.6;
+   font-family: 'Georgia', serif;
+   color: #3d2817;
 
 }
 
 .navibar {
-    background: linear-gradient(to right,#8b1e35,#5a1f1f);
+    background: linear-gradient(to right,#d3a798,#6d4c41);
     padding: 15px;
     text-align: center;
 }
 
 .navibar a {
     font-weight: bold;
-    color: #fff;
+    color: #ffe4e1;
     text-decoration: none;
     margin: 0 12px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all, 0.3, ease;
 }
 
 .navibar a :hover {
-    color: #ffd1dc;
+    background-color:#d4887d;
+    color: white;
 }
 
 h1 {
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: #8b1e35;
+    color: #8b4513;
     margin: 30px 0;
 
 }
 
+h2 {
+
+    font-size: 1.3em;
+    text-align: center;
+    color: #5d4037;
+    line-height: 1.8;
+
+}
+
 h3 {
-    color: #5a1f1f;
-    margin-top: 10px;
+    text-align: center;
+    color: #6d4c41;
+    margin-top: 15px;
+    font-size: 25px;
 }
 
-img {
-    margin: 15px auto;
-    display: block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
-    border-radius: 12px;
 
-
-}
-
-body > h1 + * {
-    margin: auto;
-    width: 80%;
-}
 
 p {
-    margin: 5px 0;
-}
+    color: #5d4037;
+    line-height: 1.8;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 20px;
 
-body > h1 + * h3 
-body > h1 + * p {
-    border-radius: 8px;
-    padding: 10px 15px;
-    background: #fff5f7;
 
 }
+
+
+
 
 a {
-    color: #8b13ef;
+    color: #cdb1e4;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+
 
 }
 
@@ -97,7 +107,7 @@ label {
 
 input {
     border-radius: 8px;
-    width: 10%;
+    width: 25%;
     border: 1px solid #d99aaa;
     margin-top: 5px;
     padding: 10px;
@@ -105,14 +115,17 @@ input {
 
 button {
     color: wheat;
-    width: 50%;
+    width: 15%;
     border: none;
     background: linear-gradient(to right, #8b13ef, #5a1f1f);
     border-radius: 10px;
     font-size: 16px;
-    margin-top: 5%;
+    margin-top: 1%;
+    margin-bottom: 5%;
     padding: 5px;
     font-weight: bold;
+    text-align: center;
+
 }
 
 button:hover {
