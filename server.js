@@ -66,16 +66,11 @@ connectToDB() // connect to database
 // Routes go here
 app.use('/auth',authController)
 app.use('/',indexController)
-
-
-app.use(isSignedIn)
-
-
 app.use('/chocolates',chocolateRoutes)
 
 
 // PROTECTED ROUTES:
-
+app.use(isSignedIn)
 
 // Everything under the user NEEDS to be logged in to se
 

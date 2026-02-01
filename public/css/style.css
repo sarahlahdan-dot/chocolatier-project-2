@@ -105,26 +105,35 @@ label {
 
 /* create page */
 
-input {
-    border-radius: 8px;
+input[type="text"] {
+    border: 2px solid #d4887d;
     width: 25%;
-    border: 1px solid #d99aaa;
+    border-radius: 8px;
     margin-top: 5px;
     padding: 10px;
+    font-size: 1em;
+    outline: none;
+}
+
+
+input [type="text"] {
+   outline: none;
+   box-shadow: 0 0 5px rgba(194, 24, 91, 0.3);
 }
 
 button {
     color: wheat;
-    width: 15%;
-    border: none;
+    width: 200px;
     background: linear-gradient(to right, #8b13ef, #5a1f1f);
-    border-radius: 10px;
     font-size: 16px;
-    margin-top: 1%;
-    margin-bottom: 5%;
-    padding: 5px;
+    margin: 8px auto;
+    padding: 8px;
     font-weight: bold;
     text-align: center;
+    border: none;
+    border-radius: 8px;
+    display: block;
+    cursor: pointer;
 
 }
 
@@ -137,6 +146,52 @@ form button[type=submit] {
 
 }
 
+.delete-button {
+    box-shadow: none;
+    padding: 0;
+}
+
+.buttons-mo {
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.buttons-mo a {
+    background: linear-gradient(to right, #d4887d, #a83250);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.buttons-mo a:hover {
+    background: linear-gradient(to right, #a83250, #6b2a2a);
+}
+
 br {
     line-height: 1.8;
+}
+
+body::before {
+  
+    top: 10px;
+    position: fixed;
+    z-index: -1;
+    content: "♥";
+    color: #d82d69;
+    right: 10px;
+    font-size: 2em;
+    opacity: 0.3;
+   
+}
+
+
+body > a:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #c2185b;
+    transform: scale(1.05);
 }

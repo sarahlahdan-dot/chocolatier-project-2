@@ -15,12 +15,14 @@
         <p>box size: <%= banana.boxSize %> </p>
         <p>occasion: <%= banana.occasion %> </p>
         <br><br>
+        <div class="buttons-mo">
                 <a href="/chocolates/update/<%= banana._id %>">update chocolate</a>
                 
-                <form action="/chocolates/delete/<%= banana._id %>" method="post">
+                <form  class="delete-button" action="/chocolates/delete/<%= banana._id %>" method="post">
                     <button type="submit">Delete chocolate</button>
                     <br>
                 </form>
+          </div>      
             
 
         <%})%>

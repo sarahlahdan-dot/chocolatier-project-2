@@ -12,45 +12,50 @@ router.get('/', async (req,res) =>{
 
 // creating new chocolate
 
-router.get('/new', async (req,res) =>{
+router.get('/new', (req,res) =>{
         res.render('create-new-chocolate.ejs')
 })
  
-router.post('/', async (req,res) => {
-  const chocolates = await Chocolate.create(req.body);
-  res.redirect ('/chocolates')
+router.post('/', async (req, res) => {
+  console.log('REQ BODY:', req.body)
+  await Chocolate.create(req.body)
+  res.redirect('/adjust-menu.ejs')
 })
+ 
+
+
 
 // delete chocolate
-router.post('/delete/:id', async(req,res)=>{
-    const deletedChocolate = await Chocolate.findByIdAndDelete(req.params.id)
-    res.redirect('/chocolates')
+router.post('/delete/:id', async (req,res)=>{
+    await Chocolate.findByIdAndDelete(req.params.id)
+  res.redirect('/chocolates/adjust')
     
 })
 
-// update chocolate page
+// adjust chocolate page
+
 router.get('/adjust', async(req,res)=>{
-    console.log(req.params.id)
     const foundChocolate = await Chocolate.find()
     res.render('adjust-menu.ejs',{chocolates:foundChocolate})
 })
 
-//edit chocolate
+//update chocolate
 
-router.get('/update/:id' , async(req,res)=>{
+router.get('/update/:id' , async (req,res)=>{
     const oneChocolate = await Chocolate.findById(req.params.id)
     res.render("updated-menu.ejs",{oneChocolate})
 })
 
+//update chocolate and save
+
 router.post('/update/:id' , async(req,res)=>{
-    const updatedChocolate = await Chocolate.findByIdAndUpdate(req.params.id , req.body)
+    const updatedChocolate = await Chocolate.findByIdAndUpdate(req.params.id , req.body, { new:true })
     res.redirect('/chocolates/adjust')
 })
 
-router.post('/delete/:id' , async(req,res)=>{
-    const deletedChocolate = await Chocolate.findByIdAndDelete(req.params.id)
-    res.redirect('/chocolates/adjust')
-})
+
+
+
 
 
 module.exports = router
